@@ -22,21 +22,24 @@ class CustomTextField extends StatelessWidget {
         labelText: labelText,
         labelStyle: const TextStyle(
           fontSize: 14.0,
-          color: Colors.grey,
+          color: Colors.white,
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.grey, width: 1.0),
+          borderSide: const BorderSide(color: Colors.white, width: 2.0),
           borderRadius: BorderRadius.circular(8.0),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.blue, width: 2.0),
+          borderSide: const BorderSide(color: Colors.white, width: 2.0),
           borderRadius: BorderRadius.circular(8.0),
         ),
         contentPadding:
             const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
-        prefixIcon: const Icon(Icons.link, color: Colors.blue),
+        prefixIcon: const Icon(Icons.link, color: Colors.white),
         suffixIcon: IconButton(
-          icon: const Icon(Icons.clear),
+          icon: const Icon(
+            Icons.clear,
+            color: Colors.white,
+          ),
           onPressed: () {
             controller.clear();
           },

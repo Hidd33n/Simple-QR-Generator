@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatefulWidget {
-  const CustomButton({super.key});
+class CustomButton extends StatelessWidget {
+  final VoidCallback onGeneratePressed;
 
-  @override
-  State<CustomButton> createState() => _CustomButtonState();
-}
+  const CustomButton({Key? key, required this.onGeneratePressed})
+      : super(key: key);
 
-class _CustomButtonState extends State<CustomButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        setState(() {});
-      },
+      onPressed: onGeneratePressed,
       child: const Text('Generate'),
-      // Estilo del botón
       style: ElevatedButton.styleFrom(
         foregroundColor: Colors.black,
         backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
       ),
     );
   }
